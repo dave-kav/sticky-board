@@ -6,10 +6,12 @@ const MongoClient = require('mongodb').MongoClient
 
 var db
 var collection
+var port = process.env.PORT || 5000;
 
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs'); // set up ejs for templating
 app.use(express.static('views'));
+
 
 //connect to db
 MongoClient.connect('mongodb://stickybandit:hackapp17@ds127126.mlab.com:27126/sticky-wars', (err, database) => {
@@ -144,6 +146,6 @@ app.use(function(err, req, res, next) {
 });
 
 //start server
-http.listen(3000, function(){
-  console.log('listening on *:3000');
+http.listen(port, function(){
+  console.log('listening on *:' + port);
 });
