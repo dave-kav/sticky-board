@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 	//socket.io connection for 'chat' functionality
 	//for prod
-	var socket = io("https://sticky-board-app.herokuapp.com/");
+	var socket = io("https://sticky-board.herokuapp.com/");
 	//for dev
 	//var socket = io("http://localhost:3000/");
 	socket.emit("join", sessionID);
