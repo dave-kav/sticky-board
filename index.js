@@ -145,6 +145,6 @@ app.use(function(err, req, res, next) {
 });
 
 //start server
-http.listen(port, function(){
-  console.log('listening on *:' + port);
+http.listen(function(){
+  console.log('listening on *:' + process.env.PORT );
 });
