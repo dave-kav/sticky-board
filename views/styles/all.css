@@ -1,0 +1,72 @@
+#footer {
+  margin: 0 auto;
+  background: grey;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 15%;
+  padding: 50px;
+
+}
+
+.stackAll {
+  opacity: 0.7;
+  border-radius: 25px;
+  padding: 10px;
+  margin:2.5%;
+  width:150px;
+  height:150px;
+  border:1px solid black; 
+}
+
+.stackDEV{
+  background-color:#fff100;
+}
+
+.stackAUTO{
+  background-color:#1b92bf;   
+}
+
+.stackQA{
+  background-color:#b35c82;
+}
+
+#trash{
+  padding: 40px;
+  padding-left: 300px;
+  margin-bottom:0 auto;
+}
+
+.row {
+  text-align: center;
+  background-color: #e3e3e3;
+  border-radius: 15px;
+  height: 750px;
+}
+
+.col-lg-4 {
+  background-color: #f5f3f3;
+}
+
+.sticky-col{
+  border: 1px dotted silver
+}
+
+#hide-init {
+  height: 1px;
+}
+
+.scroll-area{
+  width:100%;
+  margin-top:100px;
+  float:left;
+  overflow-y:scroll;
+}
+
+.space {
+  margin-top:5px !important;
+}
+
+#sticky-form {
+  padding-left: 380px;
+}

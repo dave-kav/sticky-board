@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<title>Node Authentication</title>
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+	<link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
+ 	<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script>
+ 	<script src="js/string.js"></script>
+	<style>
+		body 		{ padding-top:80px; }
+	</style>
+</head>
+<body onload="testSend()"> 
+<div class="container">
+
+	<div class="jumbotron text-center">
+		<h1><span class="fa fa-heart"></span> Making Session </h1>
+	</div>
+
+</div>
+
+	<script>
+		var url = window.location.href;
+	    console.log(url);
+
+        var session;
+        session = createString();
+        //sendSession();
+        setInterval(function(){  
+        	//will need to refactor to server/session URL
+	        var urlNew = "http://localhost:3000/" + session;
+	        console.log(urlNew);
+	        window.location.href = urlNew;
+        }, 3500);
+
+        function testSend() {
+        	var socket = io("http://localhost:3000");
+        	socket.emit('create-session-message', session);
+        }
+  </script>
+</body>
+</html>
