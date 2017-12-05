@@ -16,7 +16,7 @@ $(document).ready(function() {
 	makeDraggable();
 
 	//socket.io connection for 'chat' functionality
-	var socket = io("http://localhost:3000");
+	var socket = io("https://sticky-board-app.herokuapp.com:5000/");
 	socket.emit("join", sessionID);
 
 	//display sticky info received from server
