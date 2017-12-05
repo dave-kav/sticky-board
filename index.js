@@ -64,6 +64,7 @@ io.on('connection', function(socket){
 
       //not what it looks like...
       io.in(room).emit('sticky load', result);
+      socket.leave(room);
     });
   });
 
