@@ -32,19 +32,20 @@ $(document).ready(function() {
 		});
 
 		//display stickies on reload
-		// socket.on('sticky load', function(msg){
-		// 	if (loadStickies) {
-		// 		var types = ['dev', 'auto', 'qa']
-		// 		for (var i = 0; i < types.length;i++) {
-		// 			var stickies = msg[0][types[i]]
-		// 			for (var j = 0; j < stickies.length; j++) {
-		// 				addSticky(stickies[j], types[i]);
-		// 			}
-		// 		}
-		// 		//prevent addional loads for other clients
-		// 		loadStickies = false;
-		// 	}			
-		// });
+		socket.on('sticky load', function(msg){
+			if (loadStickies) {
+				var types = ['dev', 'auto', 'qa']
+				for (var i = 0; i < types.length;i++) {
+					var stickies = msg[0][types[i]]
+					console.log(stickies);
+					for (var j = 0; j < stickies.length; j++) {
+						addSticky(stickies[j], types[i]);
+					}
+				}
+				//prevent addional loads for other clients
+				loadStickies = false;
+			}			
+		});
 	} 
 
 	//init receive
