@@ -6,8 +6,7 @@ const MongoClient = require('mongodb').MongoClient
 
 var db
 var collection
-var port = process.env.PORT || 5000;
-
+app.set('port', (process.env.PORT || 5000));
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs'); // set up ejs for templating
 app.use(express.static('views'));
