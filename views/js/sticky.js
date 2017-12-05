@@ -16,7 +16,10 @@ $(document).ready(function() {
 	makeDraggable();
 
 	//socket.io connection for 'chat' functionality
+	//for prod
 	var socket = io("https://sticky-board-app.herokuapp.com/");
+	//for dev
+	//var socket = io("http://localhost:3000/");
 	socket.emit("join", sessionID);
 
 	//display sticky info received from server
@@ -37,10 +40,12 @@ $(document).ready(function() {
 				var types = ['dev', 'auto', 'qa']
 				for (var i = 0; i < types.length;i++) {
 					var stickies = msg[0][types[i]]
-					console.log(stickies);
-					for (var j = 0; j < stickies.length; j++) {
-						addSticky(stickies[j], types[i]);
-					}
+					if (stickies) {
+						console.log(stickies);
+						for (var j = 0; j < stickies.length; j++) {
+							addSticky(stickies[j], types[i]);
+						}
+					}					
 				}
 				//prevent addional loads for other clients
 				loadStickies = false;

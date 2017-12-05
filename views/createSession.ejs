@@ -27,14 +27,19 @@
         session = createString();
         //sendSession();
         setInterval(function(){  
-        	//will need to refactor to server/session URL
+        	//for prod
 	        var urlNew = "https://sticky-board-app.herokuapp.com/" + session;
+	        //for dev
+	        // var urlNew = "http://localhost:3000/" + session;
 	        console.log(urlNew);
 	        window.location.href = urlNew;
         }, 3500);
 
         function testSend() {
+        	//for prod
         	var socket = io("https://sticky-board-app.herokuapp.com/");
+        	//for dev
+        	// var socket = io("http://localhost:3000/");
         	socket.emit('create-session-message', session);
         }
   </script>
