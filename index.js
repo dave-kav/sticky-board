@@ -6,7 +6,7 @@ const MongoClient = require('mongodb').MongoClient
 
 var db
 var collection
-app.set('port', (5000));
+var port = process.env.PORT || 3000
 app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs'); // set up ejs for templating
 app.use(express.static('views'));
@@ -145,6 +145,6 @@ app.use(function(err, req, res, next) {
 });
 
 //start server
-http.listen(function(){
-  console.log('listening on *:' + process.env.PORT );
+http.listen(port, function(){
+  console.log('listening on *:' + port );
 });
